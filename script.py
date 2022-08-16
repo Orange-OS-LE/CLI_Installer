@@ -37,3 +37,4 @@ print(out)
 menu = archinstall.GlobalMenu(data_store=archinstall.arguments)
 
 menu.enable("archinstall-language")
+menu.run()
