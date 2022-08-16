@@ -1,4 +1,4 @@
-from cgitb import enable
+from time import time
 import archinstall, os
 
 if not os.environ.get("SUDO_UID") and os.geteuid() != 0:
@@ -50,4 +50,21 @@ def filesys():
                 with archinstall.Filesystem(drive, mode) as fs:
                     fs.load_layout(archinstall.arguments["disk_layouts"][drive.path])
 
-def do_install()
+
+def do_install(mountpoint):
+
+    with archinstall.Installer(
+        mountpoint, base_packages=None, kernels=None
+    ) as installation:
+        if archinstall.arguments.get("disk_layouts"):
+            installation.mount_ordered_layout(archinstall.arguments["disk_layouts"])
+
+        for partion in installation.partitions:
+            if partion.mountpoint == installation.target + "/boot":
+                if partion.size < 0.19:
+                    raise archinstall.DiskError(
+                        f"The selected /boot partition in use is not large enough to properly install a boot loader. Please resize it to at least 200MiB and re-run the installation."
+                    )
+
+        while archinstall.service_state("reflector") not in ("dead", "failed"):
+            time.sleep(1)
