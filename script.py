@@ -5,6 +5,7 @@ if not os.environ.get("SUDO_UID") and os.geteuid() != 0:
 
 print("Welcome to the Orange OS LE Installer")
 print("This will ask you some questions to help make your installation great!")
+'''
 invalidInput = True
 while invalidInput:
     choice = input("1. What language do you use? ")
@@ -32,3 +33,7 @@ Urdu
         continue
     invalidInput = False
 print(out)
+'''
+menu = archinstall.GlobalMenu(data_store=archinstall.arguments)
+
+menu.enable("archinstall-language")
