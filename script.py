@@ -12,6 +12,7 @@ menu = archinstall.GlobalMenu(data_store=archinstall.arguments)
 
 menu.enable("archinstall-language")
 menu.enable("keyboard-layout")
+menu.enable("mirror-region")
 # menu.enable()
 menu.enable("abort")
 menu.run()
