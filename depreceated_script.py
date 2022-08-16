@@ -1,4 +1,5 @@
 # This (incomplete) script should not be used, and script.py should be used instead.
+# This script will be deleted in the near future.
 
 from time import time
 import archinstall, os
