@@ -6,8 +6,8 @@ invalidInput = True
 while invalidInput:
     choice = input("1. What language do you use? ")
     try:
-        test = archinstall.select_language(choice)
+        out = archinstall.select_language(choice)
     except:
         continue
     invalidInput = False
-print(test)
+print(out)
