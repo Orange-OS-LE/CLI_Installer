@@ -1,3 +1,5 @@
+# This (incomplete) script should not be used, and script.py should be used instead.
+
 from time import time
 import archinstall, os
 
@@ -68,3 +70,12 @@ def do_install(mountpoint):
 
         while archinstall.service_state("reflector") not in ("dead", "failed"):
             time.sleep(1)
+
+        archinstall.SysCommand("timedatectl set-ntp true")
+        # removed waiting for update as it probably doesn't matter
+
+        if archinstall.arguments.get("mirror-region", None):
+            archinstall.use_mirrors(archinstall.arguments["mirror-region"])
+
+        # following section copied pasted from https://github.com/archlinux/archinstall/blob/master/examples/guided.py
+        # and edited by me (basically removed some r)
