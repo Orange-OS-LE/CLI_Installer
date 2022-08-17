@@ -73,5 +73,9 @@ for x in range(0, users_no):
         user_creds.write('"sudo": false,\n')
 
     user_creds.write(f'"username": "{username}"\n')
-    user_creds.write("}\n")
+    user_creds.write("}")
+    if x == users_no - 1:
+        user_creds.write("\n")
+    else:
+        user_creds.write(",\n")
 user_creds.write("]\n}")
