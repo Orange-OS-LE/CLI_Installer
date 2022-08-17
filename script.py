@@ -9,6 +9,10 @@ host_name = input(
 )
 keyboard_layout = input("Now enter your keyboard layout, like uk or us: ")
 
+language = input(
+    'Now please enter your locale language. This should be something like "en_US"\n:'
+)
+
 user_config = open("user_configuration.json", "w")
 user_config.write(
     f"""
@@ -31,8 +35,11 @@ user_config.write(
 {'}'},
 "plugin": null,
 "profile": {'{'}
-    "path": "/usr/lib/
-{'}'}
+    "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
+{'}'},
+"script": "guided",
+"silent": false,
+"sys-language": 
 """
 )
 print(sys.version)
