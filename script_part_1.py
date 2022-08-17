@@ -1,4 +1,5 @@
-import sys
+import sys, os, shutil
+
 
 print("Welcome to the Orange OS LE 1.0.0-alpha install script.")
 print("We will ask you a few questions to make sure you get a great configuration.")
@@ -79,3 +80,7 @@ for x in range(0, users_no):
     else:
         user_creds.write(",\n")
 user_creds.write("]\n}")
+print("Now we are going to setup your disks")
+boot_system = "bios"
+if os.path.exists("/sys/firmware/efi"):
+    boot_system = "eufi"
