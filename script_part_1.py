@@ -41,6 +41,7 @@ user_config = open("user_configuration.json", "w")
 user_config.write(
     f"""
 {'{'}
+"audio": "pipewire",
 "config_version": "2.5.0",
 "debug": false,
 "harddrives": [
