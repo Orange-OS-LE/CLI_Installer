@@ -79,7 +79,7 @@ user_config.write(
 "script": "guided",
 "silent": false,
 "sys-language": "{language}",
-"sys-encoding": "utf-8"
+"sys-encoding": "utf-8",
 "timezone": "{time_zone}",
 "version": "2.5.0"
 {'}'}
