@@ -61,7 +61,7 @@ user_creds.write(
 users_no = int(input("First, how many users do you want the system to hold: "))
 for x in range(0, users_no):
     user_creds.write("{\n")
-    username = input("Ok what the you want the username of user {x} to be: ")
+    username = input(f"Ok what the you want the username of user {x + 1} to be: ")
     password = input(f"Now, what password do you want to give {username}: ")
     superuser = input(
         f"Lastly do you want {username} to be a superuser? Leave blank if you don't: "
