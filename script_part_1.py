@@ -129,6 +129,15 @@ user_disks.write(
                     "format": "ext4",
                     "mount_options": []
                 {'}'},
-                "mountpoint": "/"
+                "mountpoint": "/",
+                "size": "100%",
+                "start": "{'206MiB' if not os.path.exists("/sys/firmware/efi") else '513MiB'}",
+                "type": "primary",
+                "wipe": true"
+            {'}'}
+        ],
+        "wipe": true
+    {'}'}
+{'}'}
 """
 )
