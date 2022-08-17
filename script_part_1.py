@@ -37,16 +37,28 @@ time_zone = input(
     "Now we need your timezone, this is usually in the format of <Continent>/<City>, e.g Europe/Paris: "
 )
 
+location = input(
+    "Finally, we need to know what country you live in. If you don't want to anser this, enter worldwide."
+).capitalize()
+
 user_config = open("user_configuration.json", "w")
 user_config.write(
     f"""
 {'{'}
 "audio": "pipewire",
+"bootloader": "grub-install",
+"filesystem": "ext4",
 "config_version": "2.5.0",
 "debug": false,
 "harddrives": [
     "{hard_drive}"
 ],
+"kernels": [
+    "linux"
+],
+"swap": true,
+"keyboard-language": "{keyboard_layout}",
+"mirror-region": "{location}",
 "hostname": "{host_name}",
 "keyboard-layout": "{keyboard_layout}",
 "mount_point": null, 
@@ -58,6 +70,8 @@ user_config.write(
     "ip": null,
     "type": "iso"
 {'}'},
+"ntp": true,
+
 "plugin": null,
 "profile": {'{'}
     "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
@@ -65,6 +79,7 @@ user_config.write(
 "script": "guided",
 "silent": false,
 "sys-language": "{language}",
+"sys-encoding": "utf-8"
 "timezone": "{time_zone}",
 "version": "2.5.0"
 {'}'}
