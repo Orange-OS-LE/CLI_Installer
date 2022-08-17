@@ -2,7 +2,7 @@
 
 The name says it all, a install script for the [Orange OS Linux Edition](https://scratch.mit.edu/discuss/topic/620114/) OS!
 
-How to install:
+## How to install:
 Download and boot the arch linux ISO, then run
 ```
 curl https://raw.githubusercontent.com/michaeleldar/Orange_OS_LE_Install_Script/master/script_part_1.py > install.py
