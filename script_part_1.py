@@ -43,8 +43,7 @@ location = input(
 
 user_config = open("user_configuration.json", "w")
 user_config.write(
-    f"""
-{'{'}
+    f"""{'{'}
 "audio": "pipewire",
 "bootloader": "grub-install",
 "filesystem": "ext4",
@@ -82,17 +81,14 @@ user_config.write(
 "sys-encoding": "utf-8",
 "timezone": "{time_zone}",
 "version": "2.5.0"
-{'}'}
-"""
+{'}'}"""
 )
 user_config.close()
 print("Okay, now we are going to setup users for you.")
 user_creds = open("user_credentials.json", "w")
 user_creds.write(
-    """
-{
-    "!users": [
-"""
+    """{
+    "!users": ["""
 )
 users_no = int(input("First, how many users do you want the system to hold: "))
 for x in range(0, users_no):
@@ -123,8 +119,7 @@ input(
 )
 user_disks = open("user_disk_layout.json", "w")
 user_disks.write(
-    f"""
-{'{'}
+    f"""{'{'}
     "{hard_drive}": {'{'}
         "partitions": [
             {'{'}
@@ -154,8 +149,7 @@ user_disks.write(
         ],
         "wipe": true
     {'}'}
-{'}'}
-"""
+{'}'}"""
 )
 os.system(
     "sudo archinstall --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
