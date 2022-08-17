@@ -14,7 +14,7 @@ language = input(
 )
 
 time_zone = input(
-    "Now we need your timezone, this is usually in the format of <Continent>/<City>, e.g Europe/Dublin: "
+    "Now we need your timezone, this is usually in the format of <Continent>/<City>, e.g Europe/Paris: "
 )
 
 user_config = open("user_configuration.json", "w")
@@ -61,10 +61,17 @@ user_creds.write(
 users_no = int(input("First, how many users do you want the system to hold: "))
 for x in range(0, users_no):
     user_creds.write("{\n")
-    username = input("Ok what the you want the username of the first user to be: ")
+    username = input("Ok what the you want the username of user {x} to be: ")
     password = input(f"Now, what password do you want to give {username}: ")
     superuser = input(
         f"Lastly do you want {username} to be a superuser? Leave blank if you don't: "
     )
     user_creds.write(f'"!password": "{password}",\n')
-    user_creds
+    if superuser:
+        user_creds.write('"sudo": true,\n')
+    else:
+        user_creds.write('"sudo": false,\n')
+
+    user_creds.write(f'"username": "{username}"\n')
+    user_creds.write("}\n")
+user_creds.write("]\n}")
