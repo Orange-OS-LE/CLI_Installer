@@ -9,3 +9,6 @@ curl https://raw.githubusercontent.com/michaeleldar/Orange_OS_LE_Install_Script/
 python3 install.py
 ```
 Then answer the questions and you have arch linux... yes you read that right. As of now, it only installs arch linux, but soon it will also install the packages and files for Orange OS LE.
+
+## Credits
+Thanks to @michaeleldar (@applejuiceproduc on scratch) for the code, and @UniqueName12345 (@DifferentDance8 on scratch) for ideas and problem solving.
