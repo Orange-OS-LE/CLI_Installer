@@ -80,3 +80,15 @@ for x in range(0, users_no):
     else:
         user_creds.write(",\n")
 user_creds.write("]\n}")
+user_creds.close()
+print("Now we will setup the disks for you. Unfourtuanatley, we can't offer to let you")
+print("do the disk partioning, but we might offer this in future.")
+input(
+    "This will delete all data on the disk you have chosen,\nso if you don't want this, press Ctrl/Command C. Otherwise press enter."
+)
+
+total, used, free = shutil.disk_usage("/")
+
+print("Total: %d GiB" % (total // (2**30)))
+print("Used: %d GiB" % (used // (2**30)))
+print("Free: %d GiB" % (free // (2**30)))
