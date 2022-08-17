@@ -120,6 +120,15 @@ user_disks.write(
                 "mountpoint": "/boot",
                 "size": "{'203MiB' if not os.path.exists("/sys/firmware/efi") else '512MiB'}",
                 "start": "{'3MiB' if not os.path.exists("/sys/firmware/efi") else '1MiB'},
-                
+                "type": "primary",
+                "wipe": true
+            {'}'},
+            {'{'}
+                "encrypted": false,
+                "filesystem": {'{'}
+                    "format": "ext4",
+                    "mount_options": []
+                {'}'},
+                "mountpoint": "/"
 """
 )
