@@ -103,5 +103,23 @@ user_creds.close()
 print("Now we will setup the disks for you. Unfourtuanatley, we can't offer to let you")
 print("do the disk partioning, but we might offer this in future.")
 input(
-    "This will delete all data on the disk you have chosen,\nso if you don't want this, press Ctrl/Command C. Otherwise press enter."
+    "This will delete all data on the disk you have chosen,\nso if you don't want this, press Ctrl/Command C. Otherwise press enter. "
+)
+user_disks = open("user_disk_layout.json", "w")
+user_disks.write(
+    f"""
+{'{'}
+    "{hard_drive}": {'{'}
+        "partitions": [
+            {'{'}
+                "boot": true,
+                "encrypted": false,
+                "filesystem": {'{'}
+                    "format": "fat32"
+                {'}'},
+                "mountpoint": "/boot",
+                "size": "{'203MiB' if not os.path.exists("/sys/firmware/efi") else '512MiB'}",
+                "start": "{'3MiB' if not os.path.exists("/sys/firmware/efi") else '1MiB'},
+                
+"""
 )
