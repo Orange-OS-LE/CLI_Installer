@@ -80,7 +80,3 @@ for x in range(0, users_no):
     else:
         user_creds.write(",\n")
 user_creds.write("]\n}")
-print("Now we are going to setup your disks")
-boot_system = "bios"
-if os.path.exists("/sys/firmware/efi"):
-    boot_system = "eufi"
