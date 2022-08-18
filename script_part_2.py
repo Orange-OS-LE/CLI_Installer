@@ -1,9 +1,6 @@
 import os
 
 term = os.system
-term("sudo pacman -Syu")
-term("sudo pacman -S git")
-term("sudo pacman -S fish")
 os_release = """NAME="Orange OS LE"
 ID=orange-os-le
 ID_LIKE=arch
@@ -21,3 +18,6 @@ ANSI_COLOR="\\033[48;2;255;165;0m"
 DEFAULT_HOSTNAME="orangeosle\""""
 term(f"sudo echo {os_release} > /etc/os-release")
 term(f"sudo echo {os_release} > /usr/lib/os-release")
+term("sudo pacman -Syu")
+term("sudo pacman -S git")
+term("sudo pacman -S fish")
