@@ -1,3 +1,5 @@
+# This file may be removed in the near future.
+
 import os
 
 term = os.system
