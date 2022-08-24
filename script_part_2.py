@@ -1,6 +1,7 @@
 import os
 
 term = os.system
+"""
 os_release = [
     'NAME="Orange OS LE"',
     "ID=orange-os-le",
@@ -18,11 +19,16 @@ os_release = [
     'ANSI_COLOR="\\033[48;2;255;165;0m"',
     'DEFAULT_HOSTNAME="orangeosle"',
 ]
-term('sudo echo "" > /etc/os-release')
-term('sudo echo "" > /usr/lib/os-release')
+term("sudo echo '' > /etc/os-release")
+term("sudo echo '' > /usr/lib/os-release")
 for line in os_release:
-    term(f'sudo echo "{line}" >> /etc/os-release')
-    term(f'sudo echo "{line}" >> /usr/lib/os-release')
+    term(f'sudo echo '{line}' >> /etc/os-release')
+    term(f'sudxo echo '{line}' >> /usr/lib/os-release')
+"""
 term("sudo pacman -Syu")
-term("sudo pacman -S git")
-term("sudo pacman -S fish")
+term("sudo pacman -S git --noconfirm")
+term("sudo pacman -S fish --noconfirm")
+term("sudo pacman -S xorg xorg-server --noconfirm")
+term("sudo pacman -S gnome --noconfirm")
+term("sudo systemctl start gdm.service")
+term("sudo reboot")
