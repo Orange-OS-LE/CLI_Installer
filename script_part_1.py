@@ -44,6 +44,7 @@ location = input(
 user_config = open("user_configuration.json", "w")
 user_config.write(
     f"""{'{'}
+"additional-repositories": ""
 "audio": "pipewire",
 "bootloader": "grub-install",
 "filesystem": "ext4",
@@ -81,6 +82,13 @@ user_config.write(
 "sys-encoding": "utf-8",
 "timezone": "{time_zone}",
 "version": "2.5.0"
+"custom-commands": [
+        "pacman -S git --noconfirm",
+        "pacman -S fish --noconfirm",
+        "pacman -S xorg xorg-server --noconfirm",
+        "pacman -S gnome --noconfirm",
+        "systemctl start gdm.service"
+]
 {'}'}"""
 )
 user_config.close()
