@@ -16,6 +16,8 @@ This program is an installer for Orange OS LE, you can find more information in 
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+# There is no part 2 of this script anymore, but the name remains for backward compatability.
+
 
 import sys, os
 
