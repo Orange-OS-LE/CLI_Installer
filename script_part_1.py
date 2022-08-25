@@ -87,7 +87,8 @@ user_config.write(
 "custom-commands": [
         "pacman -S xorg xorg-server --noconfirm",
         "pacman -S gnome --noconfirm",
-        "systemctl enable gdm.service"
+        "systemctl enable gdm.service",
+        "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 ]
 {'}'}"""
 )
