@@ -89,7 +89,7 @@ user_config.write(
         "pacman -S fish --noconfirm",
         "pacman -S xorg xorg-server --noconfirm",
         "pacman -S gnome --noconfirm",
-        "systemctl start gdm.service"
+        "systemctl enable gdm.service"
 ]
 {'}'}"""
 )
