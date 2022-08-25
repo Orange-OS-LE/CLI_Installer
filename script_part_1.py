@@ -82,6 +82,7 @@ user_config.write(
 "sys-encoding": "utf-8",
 "timezone": "{time_zone}",
 "version": "2.5.0"
+"packages": ["git", "python3"]
 "custom-commands": [
         "pacman -S git --noconfirm",
         "pacman -S fish --noconfirm",
