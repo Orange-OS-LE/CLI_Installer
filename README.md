@@ -15,6 +15,7 @@ python3 install.py
 
 Then answer the questions and Orange OS LE 0.1.0. Note, that this isn't the final release and a lot is missing.
 
+The install process is very buggy right now, so testing is apreciated.
 ## Credits
 
 @michaeleldar (@applejuiceproduc on scratch) for the code
