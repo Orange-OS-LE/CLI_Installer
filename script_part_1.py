@@ -48,6 +48,7 @@ user_config.write(
 "audio": "pipewire",
 "bootloader": "grub-install",
 "filesystem": "ext4",
+"HSM": null,
 "config_version": "2.5.0",
 "debug": false,
 "harddrives": [
