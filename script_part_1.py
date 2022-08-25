@@ -85,8 +85,6 @@ user_config.write(
 "version": "2.5.0",
 "packages": ["git", "python3"],
 "custom-commands": [
-        "pacman -S git --noconfirm",
-        "pacman -S fish --noconfirm",
         "pacman -S xorg xorg-server --noconfirm",
         "pacman -S gnome --noconfirm",
         "systemctl enable gdm.service"
