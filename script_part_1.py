@@ -38,7 +38,7 @@ time_zone = input(
 )
 
 location = input(
-    "Finally, we need to know what country you live in. If you don't want to anser this, enter worldwide."
+    "Finally, we need to know what country you live in. If you don't want to answer this, enter worldwide."
 ).capitalize()
 
 user_config = open("user_configuration.json", "w")
