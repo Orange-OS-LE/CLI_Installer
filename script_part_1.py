@@ -44,7 +44,7 @@ location = input(
 user_config = open("user_configuration.json", "w")
 user_config.write(
     f"""{'{'}
-"additional-repositories": ""
+"additional-repositories": "",
 "audio": "pipewire",
 "bootloader": "grub-install",
 "filesystem": "ext4",
