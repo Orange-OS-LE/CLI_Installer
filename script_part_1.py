@@ -74,7 +74,6 @@ user_config.write(
     "type": "iso"
 {'}'},
 "ntp": true,
-
 "plugin": null,
 "profile": {'{'}
     "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
