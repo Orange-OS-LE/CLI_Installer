@@ -16,8 +16,31 @@ python3 install.py
 Then answer the questions and Orange OS LE 0.1.0. Note, that this isn't the final release and a lot is missing.
 
 The install process is very buggy right now, so testing is apreciated.
+
+## Config (not released yet)
+
+### Config file syntax
+```
+line 1: Path to hard drive
+line 2: Hostname
+line 3: Keyboard layout (all lowercase)
+line 4: Language locale
+line 5: Timezone (slash between places, places starting with a capital letter)
+line 6: Country
+line 7: Amount of users to be added
+```
+After that, the lines are username, password and wether the user is a superuser (leave blank if not). Repeat those lines for each user.
+
+You can find an example config file in examples/simple.config.
+
+### How to use a config file
+
+Run the installer with an extra argument, that being the config file path
+```
+python3 install.py my_config.config
+```
 ## Credits
 
-@michaeleldar (@applejuiceproduc on scratch) for the code
+@michaeleldar (@applejuiceproduc on scratch) for the code.
 @UniqueName12345 (@DifferentDance8 on scratch) for ideas and problem solving.
 @ScratchcatandGobo (on scratch) for ideas.

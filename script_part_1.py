@@ -84,7 +84,7 @@ def config_file():
     keyboard_layout = config.readline()
     language = config.readline()
     time_zone = config.readline()
-    location = config.readline()
+    location = config.readline().capitalize()
 
     user_creds = open("user_credentials.json", "w")
     user_creds.write(
