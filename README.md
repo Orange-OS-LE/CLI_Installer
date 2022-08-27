@@ -9,7 +9,7 @@ A GUI install system is coming soon, but for now, this is your only option.
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
-curl https://Orange-OS-LE.github.io/0.1.0_CLI_Install > install.py
+curl https://Orange-OS-LE.github.io/0.1.0_CLI_Install.txt > install.py
 python3 install.py
 ```
 
