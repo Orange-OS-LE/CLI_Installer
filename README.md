@@ -6,18 +6,36 @@ A GUI install system is coming soon, but for now, this is your only option.
 
 ## How to install:
 
+### Stable version (0.1.0) (recommended for most people)
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
-curl https://Orange-OS-LE.github.io/0.1.0_CLI_Install.txt > install.py
+curl https://orange-os-le.github.io/0.1.0_CLI_Install.txt > install.py
 python3 install.py
 ```
 
-Then answer the questions and Orange OS LE 0.1.0. Note, that this isn't the final release and a lot is missing.
+Then answer the questions. Note, that this isn't the final release and a lot is missing.
 
-The install process is very buggy right now, so testing is apreciated.
+The install process is a bit buggy right now, so testing is apreciated.
 
-## Config (not released yet)
+### Beta version (0.2.0) (not recommended)
+
+Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
+
+```
+curl https://raw.githubusercontent.com/Orange-OS-LE/CLI_Installer/master/script_part_1.py > install.py
+python3 install.py
+```
+
+Then answer the questions. Note, that this isn't the final release and a lot is missing.
+
+The install process is a bit buggy right now, so testing is apreciated.
+
+## Roadmap
+
+0.1.0 (released) - Adds gnome desktop enviroment
+
+## Config (not released yet) (probably broken)
 
 ### Config file syntax
 ```

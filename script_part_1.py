@@ -21,7 +21,12 @@ This program is an installer for Orange OS LE, you can find more information in 
 
 import sys, os
 
-hard_drive, host_name, keyboard_layout, language, time_zone, location = ""
+hard_drive = ""
+host_name = ""
+keyboard_layout = ""
+language = ""
+time_zone = ""
+location = ""
 
 
 def ui():
@@ -165,9 +170,7 @@ user_config.write(
 "packages": ["git", "python3"],
 "custom-commands": [
         "pacman -S xorg xorg-server --noconfirm",
-        "pacman -S gnome --noconfirm",
-        "systemctl enable gdm.service",
-        "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+        "pacman -S gnome --noconfirm"
 ]
 {'}'}"""
 )
