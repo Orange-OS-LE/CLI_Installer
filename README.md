@@ -33,6 +33,19 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 The install process is a bit buggy right now, so testing is apreciated.
 
+### A Chaos Community fork
+
+Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
+
+```
+curl https://raw.githubusercontent.com/TheChaosCommunity/CLI_Installer/master/script_part_1.py > install.py
+python3 install.py
+```
+
+Then answer the questions. Note, that this isn't the final release and a lot is missing.
+
+The install process is a bit buggy right now, so testing is apreciated.
+
 ## Roadmap
 ```
 0.1.x (released) - Adds gnome desktop enviroment
