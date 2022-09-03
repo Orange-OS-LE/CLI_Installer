@@ -16,26 +16,6 @@ This program is an installer for Orange OS LE, you can find more information in 
 
 import sys, os
 
-def install():
-    """
-    If the first try to install Orange OS fails, try again.
-    """
-    try:
-        os.system(
-    "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
-        )
-    except Exception:
-        install()
-
-
-print("""\
-   ___                                     ___   ____  
-  / _ \  _ __  __ _  _ __    __ _   ___   / _ \ / ___| 
- | | | || '__|/ _` || '_ \  / _` | / _ \ | | | |\___ \ 
- | |_| || |  | (_| || | | || (_| ||  __/ | |_| | ___) |
-  \___/ |_|   \__,_||_| |_| \__, | \___|  \___/ |____/ 
-                            |___/                      
-""")
 
 print("Welcome to the Orange OS LE 1.0.0-alpha install script.")
 print("We will ask you a few questions to make sure you get a great configuration.")
@@ -176,4 +156,11 @@ user_disks.write(
 {'}'}"""
 )
 user_disks.close()
-install()
+def install():
+    # thanks to @UniqueName12345 for this idea.
+    try:
+        os.system(
+            "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
+        )
+    except:
+        install()
