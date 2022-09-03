@@ -164,3 +164,4 @@ def install():
         )
     except:
         install()
+install()
