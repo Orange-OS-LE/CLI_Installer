@@ -17,7 +17,7 @@ This program is an installer for Orange OS LE, you can find more information in 
 import sys, os
 
 
-print("Welcome to the Orange OS LE 1.0.0-alpha install script.")
+print("Welcome to the Orange OS LE install script.")
 print("We will ask you a few questions to make sure you get a great configuration.")
 
 hard_drive = input("Please input your disk drive file, like /dev/sda: ")
