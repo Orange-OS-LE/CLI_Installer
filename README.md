@@ -6,13 +6,15 @@ A GUI install system is coming soon, but for now, this is your only option.
 
 ## How to install:
 
-### Stable version (0.1.0) (recommended for most people)
+### A stable version (latest 0.1.0) (recommended for most people)
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
 curl https://orange-os-le.github.io/0.1.0_CLI_Install.txt > install.py
 python3 install.py
 ```
+You can replace 0.1.0 with the version you want to download.
+0.0.0 is not an option.
 
 Then answer the questions. Note, that this isn't the final release and a lot is missing.
 
