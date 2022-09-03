@@ -1,130 +1,42 @@
 """
 This program is an installer for Orange OS LE, you can find more information in the README
     Copyright (C) 2022 Michael Halpin
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-# There is no part 2 of this script anymore, but the name remains for backward compatability.
-
 
 import sys, os
 
-hard_drive = ""
-host_name = ""
-keyboard_layout = ""
-language = ""
-time_zone = ""
-location = ""
 
+print("Welcome to the Orange OS LE install script.")
+print("We will ask you a few questions to make sure you get a great configuration.")
 
-def ui():
-    global hard_drive, host_name, keyboard_layout, language, time_zone, location
-    print("Welcome to the Orange OS LE install script.")
-    print("We will ask you a few questions to make sure you get a great configuration.")
-
-    hard_drive = input("Please input your disk drive file, like /dev/sda: ")
-    host_name = input(
+hard_drive = input("Please input your disk drive file, like /dev/sda: ")
+host_name = input(
     "Please enter the name you want to give your computer (a.k.a your hostname): "
-    )
-    keyboard_layout = input("Now enter your keyboard layout, like uk or us: ")
+)
+keyboard_layout = input("Now enter your keyboard layout, like uk or us: ")
 
-    language = input(
-        'Now please enter your locale language. This should be something like "en_US": '
-    )
+language = input(
+    'Now please enter your locale language. This should be something like "en_US": '
+)
 
-    time_zone = input(
-        "Now we need your timezone, this is usually in the format of <Continent>/<City>, e.g Europe/Paris: "
-    )
+time_zone = input(
+    "Now we need your timezone, this is usually in the format of <Continent>/<City>, e.g Europe/Paris: "
+)
 
-    location = input(
-        "Finally, we need to know what country you live in. If you don't want to answer this, enter worldwide."
-    ).capitalize()
-
-    print("Okay, now we are going to setup users for you.")
-    user_creds = open("user_credentials.json", "w")
-    user_creds.write(
-        """{
-        "!users": ["""
-    )
-    users_no = int(input("First, how many users do you want the system to hold: "))
-    for x in range(0, users_no):
-        user_creds.write("{\n")
-        username = input(f"Ok what the you want the username of user {x + 1} to be: ")
-        password = input(f"Now, what password do you want to give {username}: ")
-        superuser = input(
-            f"Lastly do you want {username} to be a superuser? Leave blank if you don't: "
-        )
-        user_creds.write(f'"!password": "{password}",\n')
-        if superuser:
-            user_creds.write('"sudo": true,\n')
-        else:
-            user_creds.write('"sudo": false,\n')
-
-        user_creds.write(f'"username": "{username}"\n')
-        user_creds.write("}")
-        if x == users_no - 1:
-            user_creds.write("\n")
-        else:
-            user_creds.write(",\n")
-    user_creds.write("]\n}")
-    user_creds.close()
-
-def config_file():
-    global hard_drive, host_name, keyboard_layout, language, time_zone, location
-    config = open(sys.argv[1], 'r')
-    hard_drive = config.readline()
-    host_name = config.readline()
-    keyboard_layout = config.readline()
-    language = config.readline()
-    time_zone = config.readline()
-    location = config.readline().capitalize()
-
-    user_creds = open("user_credentials.json", "w")
-    user_creds.write(
-        """{
-        "!users": ["""
-    )
-    users_no = int(config.readline())
-    for x in range(0, users_no):
-        user_creds.write("{\n")
-        username = config.readline()
-        password = config.readline()
-        superuser = config.readline()
-        user_creds.write(f'"!password": "{password}",\n')
-        if superuser:
-            user_creds.write('"sudo": true,\n')
-        else:
-            user_creds.write('"sudo": false,\n')
-
-        user_creds.write(f'"username": "{username}"\n')
-        user_creds.write("}")
-        if x == users_no - 1:
-            user_creds.write("\n")
-        else:
-            user_creds.write(",\n")
-    user_creds.write("]\n}")
-    user_creds.close()
-
-
-
-
-if sys.argv.__len__() == 2:
-    config_file()
-else:
-    ui()
-
+location = input(
+    "Finally, we need to know what country you live in. If you don't want to answer this, enter worldwide."
+).capitalize()
 
 user_config = open("user_configuration.json", "w")
 user_config.write(
@@ -170,12 +82,40 @@ user_config.write(
 "packages": ["git", "python3"],
 "custom-commands": [
         "pacman -S xorg xorg-server --noconfirm",
-        "pacman -S gnome --noconfirm"
+        "pacman -S gnome --noconfirm",
+        "systemctl enable gdm.service"
 ]
 {'}'}"""
 )
 user_config.close()
-# user creds
+print("Okay, now we are going to setup users for you.")
+user_creds = open("user_credentials.json", "w")
+user_creds.write(
+    """{
+    "!users": ["""
+)
+users_no = int(input("First, how many users do you want the system to hold: "))
+for x in range(0, users_no):
+    user_creds.write("{\n")
+    username = input(f"Ok what the you want the username of user {x + 1} to be: ")
+    password = input(f"Now, what password do you want to give {username}: ")
+    superuser = input(
+        f"Lastly do you want {username} to be a superuser? Leave blank if you don't: "
+    )
+    user_creds.write(f'"!password": "{password}",\n')
+    if superuser:
+        user_creds.write('"sudo": true,\n')
+    else:
+        user_creds.write('"sudo": false,\n')
+
+    user_creds.write(f'"username": "{username}"\n')
+    user_creds.write("}")
+    if x == users_no - 1:
+        user_creds.write("\n")
+    else:
+        user_creds.write(",\n")
+user_creds.write("]\n}")
+user_creds.close()
 print("Now we will setup the disks for you. Unfourtuanatley, we can't offer to let you")
 print("do the disk partioning, but we might offer this in future.")
 input(
