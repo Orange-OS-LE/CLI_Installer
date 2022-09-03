@@ -156,9 +156,11 @@ user_disks.write(
 {'}'}"""
 )
 user_disks.close()
-os.system(
-    "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
-)
-os.system(
-    "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
-)
+def install():
+    # thanks to @UniqueName12345 for this idea.
+    try:
+        os.system(
+            "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
+        )
+    except:
+        install()
