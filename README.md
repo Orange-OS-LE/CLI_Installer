@@ -29,7 +29,7 @@ line 5: Timezone (slash between places, places starting with a capital letter)
 line 6: Country
 line 7: Amount of users to be added
 ```
-After that, the lines are username, password and wether the user is a superuser (leave blank if not). Repeat those lines for each user.
+After that, the lines are username, password and whether the user is a superuser (leave blank if not). Repeat those lines for each user.
 
 You can find an example config file in examples/simple.config.
 
