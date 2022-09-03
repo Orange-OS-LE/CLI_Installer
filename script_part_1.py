@@ -14,11 +14,23 @@ This program is an installer for Orange OS LE, you can find more information in 
 """
 
 
-import sys, os
+import sys, os, logging
 
+class ExitIFStatement(Exception):
+    pass
 
 print("Welcome to the Orange OS LE 1.0.0-alpha install script.")
 print("We will ask you a few questions to make sure you get a great configuration.")
+
+
+dev_mode = input("Enable dev mode (debugs the installation process to a log file)? (y/n)")
+try:
+    if dev_mode.lower() == "y":
+        logging.basicConfig(level=logging.INFO)
+    else:
+        raise ExitIFStatement # a workaround for not being able to exit an if loop
+except ExitIFStatement:
+    pass
 
 hard_drive = input("Please input your disk drive file, like /dev/sda: ")
 host_name = input(
