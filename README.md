@@ -32,8 +32,15 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 The install process is a bit buggy right now, so testing is apreciated.
 
 ## Roadmap
+```
+0.1.x (released) - Adds gnome desktop enviroment
+0.2.x (beta) - Config file support
+0.3.x - UI changes
+0.4.x - Adds some gnome extensions
+1.0.x - Adds an updating system
+```
 
-0.1.0 (released) - Adds gnome desktop enviroment
+This roadmap may not be completely followed.
 
 ## Config (not released yet) (probably broken)
 
