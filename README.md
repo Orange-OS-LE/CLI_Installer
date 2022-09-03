@@ -4,6 +4,8 @@ The name says it all, a install script for the [Orange OS Linux Edition](https:/
 
 A GUI install system is coming soon, but for now, this is your only option.
 
+Note: 0.1.1 is broken, but 0.1.2 will be out soon to fix that.
+
 ## How to install:
 
 ### A stable version (latest 0.1.0) (recommended for most people)
