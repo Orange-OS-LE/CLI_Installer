@@ -14,6 +14,7 @@ This program is an installer for Orange OS LE, you can find more information in 
 """
 
 
+import datetime
 import sys, os, logging
 
 class ExitIFStatement(Exception):
@@ -26,13 +27,19 @@ print("We will ask you a few questions to make sure you get a great configuratio
 dev_mode = input("Enable dev mode (debugs the installation process to a log file)? (y/n)")
 try:
     if dev_mode.lower() == "y":
-        logging.basicConfig(level=logging.INFO)
+        logr = logging.getLogger('oos')
+        logr.setLevel(logging.DEBUG)
+        fh = logging.FileHandler(f'{datetime.datetime.now()}.ooslog')
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+        logr.addHandler(fh)
     else:
         raise ExitIFStatement # a workaround for not being able to exit an if loop
 except ExitIFStatement:
     pass
 
 hard_drive = input("Please input your disk drive file, like /dev/sda: ")
+
 host_name = input(
     "Please enter the name you want to give your computer (a.k.a your hostname): "
 )
@@ -51,6 +58,7 @@ location = input(
 ).capitalize()
 
 user_config = open("user_configuration.json", "w")
+logr.info("User config file made!")
 user_config.write(
     f"""{'{'}
 "additional-repositories": "",
@@ -100,6 +108,7 @@ user_config.write(
 {'}'}"""
 )
 user_config.close()
+logr.info("User configurations stored inside user config file!")
 print("Okay, now we are going to setup users for you.")
 user_creds = open("user_credentials.json", "w")
 user_creds.write(
@@ -130,9 +139,20 @@ user_creds.write("]\n}")
 user_creds.close()
 print("Now we will setup the disks for you. Unfourtuanatley, we can't offer to let you")
 print("do the disk partioning, but we might offer this in future.")
-input(
-    "This will delete all data on the disk you have chosen,\nso if you don't want this, press Ctrl/Command C. Otherwise press enter. "
+confirm_installation = input(
+    "This will delete all data on the disk you have chosen,\nIf you agree to the conditions, submit with a \"Y\". Otherwise, submit with any other letter."
 )
+try:
+    if confirm_installation.lower() != "y":
+        logr.info("User declined installation.")
+        exit()
+    else:
+        logr.info("User accepted installation.")
+        raise ExitIFStatement # like I said earlier, a workaround!
+except ExitIFStatement:
+    pass
+
+logr.critical("User has opted to install OOs!")
 user_disks = open("user_disk_layout.json", "w")
 user_disks.write(
     f"""{'{'}
@@ -171,9 +191,11 @@ user_disks.close()
 def install():
     # thanks to @UniqueName12345 for this idea.
     try:
+        logr.info("Installing OOs...")
         os.system(
             "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
         )
-    except:
+    except Exception as e:
+        logr.error("Something went wrong! Restarting installation process....")
         install()
 install()
