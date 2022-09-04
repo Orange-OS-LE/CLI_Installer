@@ -167,10 +167,10 @@ user_config.write(
 "sys-encoding": "utf-8",
 "timezone": "{time_zone}",
 "version": "2.5.0",
-"packages": ["git", "python3"],
+"packages": ["xorg", "xorg-server", "gnome"],
 "custom-commands": [
-        "pacman -S xorg xorg-server --noconfirm",
-        "pacman -S gnome --noconfirm"
+        "systemctl enable gdm.service",
+        "reboot -h now"
 ]
 {'}'}"""
 )
