@@ -169,8 +169,7 @@ user_config.write(
 "version": "2.5.0",
 "packages": ["xorg", "xorg-server", "gnome"],
 "custom-commands": [
-        "systemctl enable gdm.service",
-        "reboot -h now"
+        "systemctl enable gdm.service"
 ]
 {'}'}"""
 )
