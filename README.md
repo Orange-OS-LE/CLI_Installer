@@ -38,7 +38,7 @@ The install process is a bit buggy right now, so testing is apreciated.
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
-curl https://raw.githubusercontent.com/TheChaosCommunity/CLI_Installer/master/script_part_1.py > install.py
+curl https://raw.githubusercontent.com/michaeleldar/CLI_Installer/master/script_part_1.py > install.py
 python3 install.py
 ```
 
