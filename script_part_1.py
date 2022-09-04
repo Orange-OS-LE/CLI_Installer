@@ -84,24 +84,24 @@ def ui():
 def config_file():
     global hard_drive, host_name, keyboard_layout, language, time_zone, location
     config = open(sys.argv[1], 'r')
-    hard_drive = config.readline()
-    host_name = config.readline()
-    keyboard_layout = config.readline()
-    language = config.readline()
-    time_zone = config.readline()
-    location = config.readline().capitalize()
+    hard_drive = config.readline().replace("\n", "")
+    host_name = config.readline().replace("\n", "")
+    keyboard_layout = config.readline().replace("\n", "")
+    language = config.readline().replace("\n", "")
+    time_zone = config.readline().replace("\n", "")
+    location = config.readline().capitalize().replace("\n", "")
 
     user_creds = open("user_credentials.json", "w")
     user_creds.write(
         """{
         "!users": ["""
     )
-    users_no = int(config.readline())
+    users_no = int(config.readline().replace("\n", ""))
     for x in range(0, users_no):
         user_creds.write("{\n")
-        username = config.readline()
-        password = config.readline()
-        superuser = config.readline()
+        username = config.readline().replace("\n", "")
+        password = config.readline().replace("\n", "")
+        superuser = config.readline().replace("\n", "")
         user_creds.write(f'"!password": "{password}",\n')
         if superuser:
             user_creds.write('"sudo": true,\n')
