@@ -13,6 +13,6 @@ These are the versions that are checked for security vulnerabilities, and bugs a
 
 ## Reporting a Vulnerability or Bug
 
-Do not report a vulnerability or bug here! Instead, send a message to @applejuiceproduc on scratch (if it's the official release) or to @DifferentDance8 on scratch (if it's from the TCC's fork)
+Do not report a vulnerability here! Instead, send a message to @applejuiceproduc on scratch (if it's the official release) or to @DifferentDance8 on scratch (if it's from the TCC's fork)
 
-Alternativeley make an issue on this repo or TCC's fork.
+Alternativeley make an issue on this repo or TCC's fork. This option only applies if it is a harmless bug.
