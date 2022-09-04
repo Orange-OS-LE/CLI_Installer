@@ -177,9 +177,14 @@ user_config.close()
 # user creds
 print("Now we will setup the disks for you. Unfourtuanatley, we can't offer to let you")
 print("do the disk partioning, but we might offer this in future.")
-input(
-    "This will delete all data on the disk you have chosen,\nso if you don't want this, press Ctrl/Command C. Otherwise press enter. "
+confirm_installation = input(
+    "This will delete all data on the disk you have chosen,\nIf you agree to the conditions, submit with a \"Y\". Otherwise, submit with any other letter."
 )
+if confirm_installation.lower() != "y":
+    print("Quiting the script, but run the script again if you change your mind.")
+    quit(0)
+else:
+    print("Here we go...")
 user_disks = open("user_disk_layout.json", "w")
 user_disks.write(
     f"""{'{'}
