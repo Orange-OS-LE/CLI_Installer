@@ -46,9 +46,6 @@ python3 install.py
 
 Then answer the questions. Note, that this isn't the final release and a lot is missing or different from the "official" version. ONLY USE THIS IF YOU KNOW WHAT YOU ARE DOING, AND KNOW THAT ISSUES FOR THIS SPECIFIC VERSION SHOULD BE REPORTED TO @UniqueName12345, NOT @michaeleldar!
 
-#### Exclusive to TCC: Dev Mode
-This basically 
-
 The install process is a bit buggy right now, so testing is apreciated.
 
 ## Roadmap
