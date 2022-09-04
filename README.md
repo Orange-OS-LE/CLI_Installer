@@ -50,8 +50,9 @@ The install process is a bit buggy right now, so testing is apreciated.
 ```
 0.1.x (released) - Adds gnome desktop enviroment
 0.2.x (beta) - Config file support
-0.3.x - UI changes
-0.4.x - Adds some gnome extensions
+0.3.x - OS will now identify itself as Orange OS LE.
+0.4.x - UI changes
+0.5.x - Adds some gnome extensions
 1.0.x - Adds an updating system
 ```
 
