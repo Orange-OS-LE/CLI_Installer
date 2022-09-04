@@ -6,14 +6,14 @@ A GUI install system is coming soon, but for now, this is your only option.
 
 ## How to install:
 
-### A stable version (latest 0.1.0) (recommended for most people)
+### A stable version (latest 0.1.2) (recommended for most people)
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
-curl https://orange-os-le.github.io/0.1.0_CLI_Install.txt > install.py
+curl https://orange-os-le.github.io/0.1.2_CLI_Install.txt > install.py
 python3 install.py
 ```
-You can replace 0.1.0 with the version you want to download.
+You can replace 0.1.2 with the version you want to download.
 0.0.0 is not an option.
 
 Then answer the questions. Note, that this isn't the final release and a lot is missing.
@@ -30,6 +30,19 @@ python3 install.py
 ```
 
 Then answer the questions. Note, that this isn't the final release and a lot is missing.
+
+The install process is a bit buggy right now, so testing is apreciated.
+
+### TheChaosCommunity's fork (0.3.0 beta) (even less recommended)
+
+Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
+
+```
+curl https://raw.githubusercontent.com/TheChaosCommunity/CLI_Installer/master/script_part_1.py > install.py
+python3 install.py
+```
+
+Then answer the questions. Note, that this isn't the final release and a lot is missing or different from the "official" version. ONLY USE THIS IF YOU KNOW WHAT YOU ARE DOING, AND KNOW THAT ISSUES FOR THIS SPECIFIC VERSION SHOULD BE REPORTED TO @UniqueName12345, NOT @michaeleldar!
 
 The install process is a bit buggy right now, so testing is apreciated.
 
