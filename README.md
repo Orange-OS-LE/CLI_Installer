@@ -75,7 +75,7 @@ line 7: Amount of users to be added
 ```
 After that, the lines are username, password and whether the user is a superuser (leave blank if not). Repeat those lines for each user.
 
-You can find an example config file in examples/simple.config.
+You can find an example config file in examples/simple.config. Warning: That config file needs to be edited to work properly, for example the time-zone needs to be changed.
 
 ### How to use a config file
 
