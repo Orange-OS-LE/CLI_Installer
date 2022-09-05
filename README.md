@@ -6,6 +6,9 @@ A GUI install system is coming soon, but for now, this is your only option.
 
 ## How to install:
 
+### Using v86:
+Since, by default, Arch Linux v86 doesn't come with internet support, you will need to do the curl command on your host, then send the install.py file to the emulator then run `python3 install.py` there.
+
 ### A stable version (latest 0.1.2) (recommended for most people)
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
