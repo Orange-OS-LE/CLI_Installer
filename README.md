@@ -9,21 +9,21 @@ A GUI install system is coming soon, but for now, this is your only option.
 ### Using v86:
 Since, by default, Arch Linux v86 doesn't come with internet support, you will need to do the curl command on your host, then send the install.py file to the emulator then run `python3 install.py` there.
 
-### A stable version (latest 0.1.2) (recommended for most people)
+### Installation (latest 22.09.06) (recommended for most people)
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
-curl https://orange-os-le.github.io/0.1.2_CLI_Install.txt > install.py
+curl https://orange-os-le.github.io/22.09.06_CLI_Install.txt > install.py
 python3 install.py
 ```
-You can replace 0.1.2 with the version you want to download.
+You can replace 22.09.06 with the version you want to download.
 0.0.0 is not an option.
 
 Then answer the questions. Note, that this isn't the final release and a lot is missing.
 
 The install process is a bit buggy right now, so testing is apreciated.
 
-### Beta version (0.2.0) (not recommended)
+### Dev version (not released) (not recommended)
 
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
@@ -36,7 +36,7 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 The install process is a bit buggy right now, so testing is apreciated.
 
-### TheChaosCommunity's fork (0.3.0 beta) (even less recommended)
+### TheChaosCommunity's fork (22.09.16 alternative) (even less recommended)
 
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
@@ -49,19 +49,7 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 The install process is a bit buggy right now, so testing is apreciated.
 
-## Roadmap
-```
-0.1.x (released) - Adds gnome desktop enviroment
-0.2.x (beta) - Config file support
-0.3.x - OS will now identify itself as Orange OS LE.
-0.4.x - UI changes
-0.5.x - Adds some gnome extensions
-1.0.x - Adds an updating system
-```
-
-This roadmap may not be completely followed.
-
-## Config (not released yet) (probably broken)
+## Config (now released!)
 
 ### Config file syntax
 ```
@@ -88,3 +76,4 @@ python3 install.py my_config.config
 @michaeleldar (@applejuiceproduc on scratch) for the code.
 @UniqueName12345 (@DifferentDance8 on scratch) for ideas and problem solving.
 @ScratchcatandGobo (on scratch) for ideas.
+@JaydenDev (@MagicCrayon9342 on scratch) for the iso (WIP) and ideas.
