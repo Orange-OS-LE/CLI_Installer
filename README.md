@@ -23,7 +23,7 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 The install process is a bit buggy right now, so testing is apreciated.
 
-### Dev version (not released) (not recommended)
+### Dev version (not recommended)
 
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
