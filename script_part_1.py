@@ -170,7 +170,8 @@ user_config.write(
 "packages": ["xorg", "xorg-server", "gnome"],
 "custom-commands": [
         "systemctl enable gdm.service",
-        "gsettings set org.gnome.desktop.background https://raw.githubusercontent.com/Orange-OS-LE/Assets/main/background1.png
+        "curl https://raw.githubusercontent.com/Orange-OS-LE/Assets/main/background1.png > bg.png"
+        "gsettings set org.gnome.desktop.background ./bg.png"
 ]
 {'}'}"""
 )
