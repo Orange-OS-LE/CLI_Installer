@@ -170,6 +170,7 @@ user_config.write(
 "packages": ["xorg", "xorg-server", "gnome"],
 "custom-commands": [
         "systemctl enable gdm.service",
+        "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'",
         "curl https://raw.githubusercontent.com/Orange-OS-LE/Assets/main/background1.png > bg.png",
         "gsettings set org.gnome.desktop.background ./bg.png"
 ]
@@ -237,5 +238,5 @@ else:
         "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
     )
 
-#os.system("reboot -h now")
+os.system("reboot -h now")
 # removed for debugging
