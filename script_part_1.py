@@ -237,4 +237,5 @@ else:
         "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
     )
 
-os.system("reboot -h now")
+#os.system("reboot -h now")
+# removed for debugging
