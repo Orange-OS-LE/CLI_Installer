@@ -31,7 +31,7 @@ Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in 
 curl https://orange-os-le.github.io/0.2.0_CLI_Install.txt > install.py
 python3 install.py
 ```
-You can replace 22.09.06 with the version you want to download.
+You can replace 0.2.0 with the version you want to download.
 0.0.0 is not an option.
 
 Then answer the questions. Note, that this isn't the final release and a lot is missing.
@@ -51,7 +51,7 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 The install process is a bit buggy right now, so testing is apreciated.
 
-### TheChaosCommunity's fork (22.09.16 alternative) (even less recommended)
+### TheChaosCommunity's fork (0.2.0 alternative) (even less recommended)
 
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
