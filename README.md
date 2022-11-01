@@ -1,3 +1,18 @@
+# This documentation is depreceated and will be removed soon, instead use [the wiki](https://github.com/Orange-OS-LE/CLI_Installer/wiki)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Orange OS LE CLI Install Script
 
 The name says it all, a install script for the [Orange OS Linux Edition](https://scratch.mit.edu/discuss/topic/620114/) OS!
@@ -9,11 +24,11 @@ A GUI install system is coming soon, but for now, this is your only option.
 ### Using v86:
 Since, by default, Arch Linux v86 doesn't come with internet support, you will need to do the curl command on your host, then send the install.py file to the emulator then run `python3 install.py` there.
 
-### Installation (latest 22.09.06) (recommended for most people)
+### Installation (latest 0.2.0) (recommended for most people)
 Download and boot an [Arch linux ISO](https://archlinux.org/download/), then in the live enviroment, run
 
 ```
-curl https://orange-os-le.github.io/22.09.06_CLI_Install.txt > install.py
+curl https://orange-os-le.github.io/0.2.0_CLI_Install.txt > install.py
 python3 install.py
 ```
 You can replace 22.09.06 with the version you want to download.
