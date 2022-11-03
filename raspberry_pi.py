@@ -32,10 +32,10 @@ os.system("sudo systemctl start bluetooth.service")
 
 
 os.system(
-    "sudo pacman -S pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-libs bluez-utils bluez-firmware"
+    "sudo pacman -S --no-confirm pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-libs bluez-utils bluez-firmware"
 )
 os.system('sudo echo "dtparam=audio=on" >> /boot/config.txt')
 
-os.system("sudo pacman -S xorg xorg-server gnome")
+os.system("sudo pacman -S --no-confirm xorg xorg-server gnome")
 
 os.system("systemctl enable gdm.service")
