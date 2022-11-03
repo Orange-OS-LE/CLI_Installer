@@ -36,6 +36,11 @@ os.system(
 )
 os.system('echo "dtparam=audio=on" >> /boot/config.txt')
 
-os.system("pacman -S --noconfirm xorg xorg-server gnome")
+os.system("pacman -S --noconfirm xorg xorg-server")
+
+# Hack to stop gnome boxes installing, which doesn't support raspberry pi.
+os.system(
+    "pacman -S --noconfirm baobab cheese eog epiphany evince file-roller gdm gedit gnome-backgrounds gnome-books gnome-calculator gnome-calendar gnome-charcters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-getting-started-docs gnome-keyring gnome-logs gnome-maps gnome-menus gnome-music gnome-photos gnome-remote-desktop gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-software gnome-system-monitor gnome-terminal gnome-themes-standard gnome-user-docs gnome-user-share gnome-video-effects gnome-weather grillo-plugins gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb malcontent mutter nautilis orca rygel simple-scan sushi totem tracker3-miners vino xdg-user-dirs-gtk yelp"
+)
 
 os.system("systemctl enable gdm.service")
