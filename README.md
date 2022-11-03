@@ -23,7 +23,7 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 ### Raspberry Pi Edition (Dev Version) (Not recommended)
 
-Setting up the raspberry pi for Orange OS LE is complicated, so first follow [this](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4) guide (signing in as "alarm"), then run
+Setting up the raspberry pi for Orange OS LE is complicated, so first follow [this](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4) guide (signing in as "root"), then run
 ```
 sudo pacman -Syu
 sudo pacman -S python3
