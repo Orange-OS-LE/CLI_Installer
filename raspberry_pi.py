@@ -20,22 +20,22 @@ import os
 
 # Thanks to this guide: https://gist.github.com/theramiyer/cb2b406128e54faa12c37e1a01f7ae15#install-packages for some of the commands.
 os.system(
-    "sudo pacman -S --needed --no-confirm nfs-utils blueman autofs alsa-utils alsa-firmware alsa-lib alsa-plugins git wget base-devel binutils diffutils libnewt dialog wpa_supplicant wireless_tools iw crda lshw"
+    "pacman -S --needed --no-confirm nfs-utils blueman autofs alsa-utils alsa-firmware alsa-lib alsa-plugins git wget base-devel binutils diffutils libnewt dialog wpa_supplicant wireless_tools iw crda lshw sudo"
 )
 
 os.system(
     "mkdir builds && cd builds && git clone https://aur.archlinux.org/bluez-utils-compat.git && makepkg -si && git clone https://aur.archlinux.org/pi-bluetooth.git && cd pi-bluetooth && makepkg -si"
 )
 
-os.system("sudo systemctl enable bluetooth.service")
-os.system("sudo systemctl start bluetooth.service")
+os.system("systemctl enable bluetooth.service")
+os.system("systemctl start bluetooth.service")
 
 
 os.system(
-    "sudo pacman -S --no-confirm pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-libs bluez-utils bluez-firmware"
+    "pacman -S --no-confirm pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-libs bluez-utils bluez-firmware"
 )
-os.system('sudo echo "dtparam=audio=on" >> /boot/config.txt')
+os.system('echo "dtparam=audio=on" >> /boot/config.txt')
 
-os.system("sudo pacman -S --no-confirm xorg xorg-server gnome")
+os.system("pacman -S --no-confirm xorg xorg-server gnome")
 
 os.system("systemctl enable gdm.service")
