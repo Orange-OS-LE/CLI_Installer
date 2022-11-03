@@ -20,7 +20,7 @@ import os
 
 # Thanks to this guide: https://gist.github.com/theramiyer/cb2b406128e54faa12c37e1a01f7ae15#install-packages for some of the commands.
 os.system(
-    "pacman -S --needed --no-confirm nfs-utils blueman autofs alsa-utils alsa-firmware alsa-lib alsa-plugins git wget base-devel binutils diffutils libnewt dialog wpa_supplicant wireless_tools iw crda lshw sudo"
+    "pacman -S --needed --noconfirm nfs-utils blueman autofs alsa-utils alsa-firmware alsa-lib alsa-plugins git wget base-devel binutils diffutils libnewt dialog wpa_supplicant wireless_tools iw crda lshw sudo"
 )
 
 os.system(
@@ -32,10 +32,10 @@ os.system("systemctl start bluetooth.service")
 
 
 os.system(
-    "pacman -S --no-confirm pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-libs bluez-utils bluez-firmware"
+    "pacman -S --noconfirm pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-libs bluez-utils bluez-firmware"
 )
 os.system('echo "dtparam=audio=on" >> /boot/config.txt')
 
-os.system("pacman -S --no-confirm xorg xorg-server gnome")
+os.system("pacman -S --noconfirm xorg xorg-server gnome")
 
 os.system("systemctl enable gdm.service")
