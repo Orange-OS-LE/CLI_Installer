@@ -25,10 +25,10 @@ Then answer the questions. Note, that this isn't the final release and a lot is 
 
 Setting up the raspberry pi for Orange OS LE is complicated, so first follow [this](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4) guide (signing in as "root"), then run
 ```
-sudo pacman -Syu
-sudo pacman -S python3
+pacman -Syu
+pacman -S python3
 curl https://raw.githubusercontent.com/Orange-OS-LE/CLI_Installer/master/raspberry_pi.py > install.py
-sudo python3 install.py
+python3 install.py
 ```
 
 This has not been tested, so if you tried this please tell us what happened.
